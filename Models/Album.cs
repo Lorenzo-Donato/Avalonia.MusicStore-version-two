@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Avalonia.MusicStore.Models
 {
@@ -15,6 +16,9 @@ namespace Avalonia.MusicStore.Models
         public string Artist { get; set; }
         public string Title { get; set; }
         public string CoverUrl { get; set; }
+        private static HttpClient s_httpClient = new();
+        private string CachePath => $"./Cache/{SanitizeFileName(Artist)} - {SanitizeFileName(Title)}";
+
 
         public Album(string artist, string title, string coverUrl)
         {
@@ -45,5 +49,30 @@ namespace Avalonia.MusicStore.Models
 
             return albums;
         }
+
+
+        public async Task<Stream> LoadCoverBitmapAsync()
+        {
+            if (File.Exists(CachePath + ".bmp"))
+            {
+                return File.OpenRead(CachePath + ".bmp");
+            }
+            else
+            {
+                var data = await s_httpClient.GetByteArrayAsync(CoverUrl);
+                return new MemoryStream(data);
+            }
+        }
+
+        private static string SanitizeFileName(string input)
+        {
+            foreach (var c in Path.GetInvalidFileNameChars())
+            {
+                input = input.Replace(c, '_');
+            }
+            return input;
+        }
+
+
     }
 }

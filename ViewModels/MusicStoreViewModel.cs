@@ -3,6 +3,9 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Avalonia.MusicStore.Models;
+using System.Threading;
+using System.Linq;
+
 
 namespace Avalonia.MusicStore.ViewModels;
 
@@ -19,39 +22,53 @@ public partial class MusicStoreViewModel : ViewModelBase
 
     public ObservableCollection<AlbumViewModel> SearchResults { get; } = new();
 
+    private CancellationTokenSource? _cancellationTokenSource;
+
 
 
     private async Task DoSearch(string? term)
     {
-        if (string.IsNullOrWhiteSpace(term))
-            return;
+        _cancellationTokenSource?.Cancel();
+        _cancellationTokenSource = new CancellationTokenSource();
+        var cancellationToken = _cancellationTokenSource.Token;
 
         IsBusy = true;
         SearchResults.Clear();
 
-        try
-        {
-            var albums = await Album.SearchAsync(term);
+        var albums = await Album.SearchAsync(term);
 
-            foreach (var album in albums)
-            {
-                var vm = new AlbumViewModel(album);
-                SearchResults.Add(vm);
-            }
-        }
-        catch (Exception ex)
+        foreach (var album in albums)
         {
-            Console.WriteLine($"Search failed: {ex.Message}");
+            var vm = new AlbumViewModel(album);
+            SearchResults.Add(vm);
         }
-        finally
+
+        if (!cancellationToken.IsCancellationRequested)
         {
-            IsBusy = false;
+            LoadCovers(cancellationToken);
         }
+
+        IsBusy = false;
     }
 
     partial void OnSearchTextChanged(string? value)
     {
         _ = DoSearch(SearchText);
     }
+
+    private async void LoadCovers(CancellationToken cancellationToken)
+    {
+        foreach (var album in SearchResults.ToList())
+        {
+            await album.LoadCover();
+            if (cancellationToken.IsCancellationRequested)
+            {
+                return;
+            }
+        }
+    }
+
+
+
 
 }
