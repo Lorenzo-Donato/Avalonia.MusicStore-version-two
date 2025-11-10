@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Avalonia.MusicStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94f0718ac26f52a2c329dd9937297bb97415542d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b37b1d0719445705bb4ffe7991f3256fab7e089")]
 [assembly: System.Reflection.AssemblyProductAttribute("Avalonia.MusicStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Avalonia.MusicStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
