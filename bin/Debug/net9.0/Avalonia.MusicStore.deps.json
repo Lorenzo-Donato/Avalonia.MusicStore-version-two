@@ -13,7 +13,8 @@
           "Avalonia.Diagnostics": "11.3.8",
           "Avalonia.Fonts.Inter": "11.3.8",
           "Avalonia.Themes.Fluent": "11.3.8",
-          "CommunityToolkit.Mvvm": "8.4.0"
+          "CommunityToolkit.Mvvm": "8.4.0",
+          "System.Net.Http.Json": "9.0.10"
         },
         "runtime": {
           "Avalonia.MusicStore.dll": {}
@@ -77,17 +78,17 @@
           "runtimes/win-arm64/native/av_libglesv2.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.1.25606.0"
           },
           "runtimes/win-x64/native/av_libglesv2.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.1.25606.0"
           },
           "runtimes/win-x86/native/av_libglesv2.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.1.25606.0"
           }
         }
       },
@@ -434,6 +435,14 @@
         }
       },
       "System.IO.Pipelines/8.0.0": {},
+      "System.Net.Http.Json/9.0.10": {
+        "runtime": {
+          "lib/net9.0/System.Net.Http.Json.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.1025.47515"
+          }
+        }
+      },
       "Tmds.DBus.Protocol/0.21.2": {
         "dependencies": {
           "System.IO.Pipelines": "8.0.0"
@@ -648,6 +657,13 @@
       "sha512": "sha512-FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
       "path": "system.io.pipelines/8.0.0",
       "hashPath": "system.io.pipelines.8.0.0.nupkg.sha512"
+    },
+    "System.Net.Http.Json/9.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CoTeijb2aexUlNq6qfaQeuCMP6945g77DDW5ztqPoar+/z6aPySwao693yCrosh4X1tVdQzIm1x+KGM+MC4TnQ==",
+      "path": "system.net.http.json/9.0.10",
+      "hashPath": "system.net.http.json.9.0.10.nupkg.sha512"
     },
     "Tmds.DBus.Protocol/0.21.2": {
       "type": "package",

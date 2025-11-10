@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Avalonia.MusicStore.csproj": {}
+    "C:\\Users\\Lorenzo\\Desktop\\Avalonia.MusicStore-version-two\\Avalonia.MusicStore.csproj": {}
   },
   "projects": {
-    "/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Avalonia.MusicStore.csproj": {
+    "C:\\Users\\Lorenzo\\Desktop\\Avalonia.MusicStore-version-two\\Avalonia.MusicStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Avalonia.MusicStore.csproj",
+        "projectUniqueName": "C:\\Users\\Lorenzo\\Desktop\\Avalonia.MusicStore-version-two\\Avalonia.MusicStore.csproj",
         "projectName": "Avalonia.MusicStore",
-        "projectPath": "/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Avalonia.MusicStore.csproj",
-        "packagesPath": "/home/lorenzo/.nuget/packages/",
-        "outputPath": "/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/obj/",
+        "projectPath": "C:\\Users\\Lorenzo\\Desktop\\Avalonia.MusicStore-version-two\\Avalonia.MusicStore.csproj",
+        "packagesPath": "C:\\Users\\Lorenzo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lorenzo\\Desktop\\Avalonia.MusicStore-version-two\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/lorenzo/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Lorenzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -68,6 +74,10 @@
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.4.0, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[9.0.10, )"
             }
           },
           "imports": [
@@ -86,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

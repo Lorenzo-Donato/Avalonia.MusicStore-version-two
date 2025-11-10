@@ -1,11 +1,15 @@
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
-using System.Linq;
 using Avalonia.Markup.Xaml;
+using Avalonia.MusicStore.Messages;
 using Avalonia.MusicStore.ViewModels;
 using Avalonia.MusicStore.Views;
+using CommunityToolkit.Mvvm.Messaging;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Avalonia.MusicStore;
 
@@ -20,9 +24,31 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
-            // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
+
+            // ✅ Register message to open MusicStoreWindow
+            WeakReferenceMessenger.Default.Register<PurchaseAlbumMessage>(this, async (r, m) =>
+            {
+                var musicStoreWindow = new MusicStoreWindow
+                {
+                    DataContext = new MusicStoreViewModel()
+                };
+
+                // Open it as a dialog (so it’s modal and centered on MainWindow)
+                if (desktop.MainWindow != null)
+                {
+                    await musicStoreWindow.ShowDialog(desktop.MainWindow);
+                }
+                else
+                {
+                    musicStoreWindow.Show();
+                }
+
+                // We don’t need to return anything here, but we reply to finish the async message
+                m.Reply((AlbumViewModel?)null);
+            });
+
+            // ✅ Set up your main window
             desktop.MainWindow = new MainWindow
             {
                 DataContext = new MainWindowViewModel(),
@@ -34,14 +60,11 @@ public partial class App : Application
 
     private void DisableAvaloniaDataAnnotationValidation()
     {
-        // Get an array of plugins to remove
-        var dataValidationPluginsToRemove =
-            BindingPlugins.DataValidators.OfType<DataAnnotationsValidationPlugin>().ToArray();
+        var toRemove = BindingPlugins.DataValidators
+            .OfType<DataAnnotationsValidationPlugin>()
+            .ToArray();
 
-        // remove each entry found
-        foreach (var plugin in dataValidationPluginsToRemove)
-        {
+        foreach (var plugin in toRemove)
             BindingPlugins.DataValidators.Remove(plugin);
-        }
     }
 }

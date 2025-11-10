@@ -24,5 +24,6 @@
             <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
         </PackageReference>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="System.Net.Http.Json" Version="9.0.10" />
     </ItemGroup>
 </Project>

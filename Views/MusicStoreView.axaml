@@ -8,7 +8,7 @@
              x:Class="Avalonia.MusicStore.Views.MusicStoreView">
   <DockPanel>
     <StackPanel DockPanel.Dock="Top">
-      <TextBox Watermark="Search for Albums...." />
+      <TextBox Watermark="Search for Albums...." Text="{Binding SearchText, Delay=400}" />
       <ProgressBar IsIndeterminate="True"  />
     </StackPanel>
       <Button Content="Buy Album" 

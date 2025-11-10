@@ -20,26 +20,26 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Avalonia.MusicStore
-build_property.ProjectDir = /home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/
+build_property.ProjectDir = C:\Users\Lorenzo\Desktop\Avalonia.MusicStore-version-two\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/App.axaml]
+[C:/Users/Lorenzo/Desktop/Avalonia.MusicStore-version-two/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Icons.axaml]
+[C:/Users/Lorenzo/Desktop/Avalonia.MusicStore-version-two/Icons.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Views/AlbumView.axaml]
+[C:/Users/Lorenzo/Desktop/Avalonia.MusicStore-version-two/Views/AlbumView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Views/MainWindow.axaml]
+[C:/Users/Lorenzo/Desktop/Avalonia.MusicStore-version-two/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Views/MusicStoreView.axaml]
+[C:/Users/Lorenzo/Desktop/Avalonia.MusicStore-version-two/Views/MusicStoreView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Views/MusicStoreWindow.axaml]
+[C:/Users/Lorenzo/Desktop/Avalonia.MusicStore-version-two/Views/MusicStoreWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
