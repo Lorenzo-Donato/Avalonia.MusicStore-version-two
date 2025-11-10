@@ -32,6 +32,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Icons.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Views/AlbumView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/lorenzo/Desktop/ programming/Avalonia/Avalonia.MusicStore/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
